@@ -9,7 +9,7 @@ export default function   Categories() {
     const CategoryButtons = (props)=>{
         
         return (
-        <Button title={props.title}  name='active'   color="#841584"
+        <Button title={props.title}  onPress={()=>console.log('Show')}  name='active'   color="#841584"
         />)
     }
     return (
@@ -17,6 +17,7 @@ export default function   Categories() {
      <CategoryButtons title='Chat' />
      <CategoryButtons title='History'/>
      <CategoryButtons  title='Data'/>
+
 
       </View>
     )
