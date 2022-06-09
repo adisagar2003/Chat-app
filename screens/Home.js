@@ -10,8 +10,25 @@ import Header from '../components/Header';
 import SearchBar from '../components/SearchBar';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import {StyleSheet} from 'react-native'
 
 function HomeScreen() {
+
+  //css
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      padding: 24,
+      backgroundColor: "#eaeaea"
+    },
+    title: {
+      marginTop: 16,
+      paddingVertical: 8,
+      textAlign: "center",
+    }
+  });
+
+
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>Home!</Text>
@@ -26,24 +43,35 @@ function HomeScreen() {
     );
   }
 export default function Home(){
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      padding: 24,
+      backgroundColor: "#eaeaea"
+    },
+    title: {
+      marginTop: 16,
+      paddingVertical: 8,
+      color:'red',
+      textAlign: "center",
+    }
+  });
     const Tab = createBottomTabNavigator();
     return (
+      <View>
         <SafeAreaView>
             
            <Text style={{textAlign:'center' ,fontWeight:'900'}}>A D - C H A T </Text>
            <SearchBar  />
 <ScrollView>
+  
          <Categories />
+      <ChatItem />
       
          </ScrollView>
-         <NavigationContainer style={{zIndex:100 ,backgroundColor:'red'}}>
-             
-         <Tab.Navigator>
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Settings" component={SettingsScreen} />
-    </Tab.Navigator>
-    </NavigationContainer>
+      
     </SafeAreaView>
-        
+     
+       </View>
     )
 }
